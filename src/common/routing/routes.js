@@ -58,7 +58,7 @@ function routingFnCreator (useFor: 'sidebar' | 'routing' | 'meta' | 'all' = 'all
 	const sidebarExternalLinks = [
 		{
 			external: true,
-			path: 'https://github.com/Metnew/suicrux',
+			path: 'https://github.com/heraldantony/react-semantic-sequelize',
 			meta: {
 				sidebarVisible: true,
 				icon: 'github',

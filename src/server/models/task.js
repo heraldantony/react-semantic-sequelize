@@ -1,23 +1,17 @@
-'use strict';
+'use strict'
 module.exports = (sequelize, DataTypes) => {
-  var Task = sequelize.define('Task', {
+	var Task = sequelize.define('Task', {
 
-    title: DataTypes.STRING,
+		title: DataTypes.STRING,
 
-    description: DataTypes.STRING
+		description: DataTypes.STRING
 
-  });
+	})
 
-
-  Task.associate = (models) => {
-
-
-    models.Task.belongsTo(models.Job, {
-      as: 'jobs'
-    });
-
-
-
-  }
-  return Task;
+	Task.associate = (models) => {
+		models.Task.belongsTo(models.Job, {
+			as: 'jobs'
+		})
+	}
+	return Task
 }

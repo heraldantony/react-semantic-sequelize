@@ -14,19 +14,30 @@ const Dashboard = () => {
 				<Grid.Row centered>
 					<Grid.Column width={16}>
 						<Header as="h1">
-							<FormattedMessage id="Dashboard.h1" />
+							React, Semantic UI App
 						</Header>
 						<Header as="h2">
-							<FormattedMessage id="Dashboard.h2-1" />
+				A CRUD app using react, semantic ui, node, express, and sequelize
+						</Header>
+
+						<Header as="h2">
+							Suicrux
 						</Header>
 						<p>
-							<FormattedMessage id="Dashboard.p-1" />
+							<a href="https://github.com/Metnew/suicrux" target="_BLANK" rel="noopener noreferrer">https://github.com/Metnew/suicrux</a>
 						</p>
-						<Header as="h2">
-							<FormattedMessage id="Dashboard.h2-2" />
+							    <Header as="h2">
+                            Semantic UI
 						</Header>
 						<p>
-							<FormattedMessage id="Dashboard.p-2" />
+							<a href="https://github.com/Semantic-Org/Semantic-UI-React" target="_BLANK" rel="noopener noreferrer">https://github.com/Semantic-Org/Semantic-UI-React</a>
+						</p>
+
+						<Header as="h2">
+                            Sequelize ORM
+						</Header>
+						<p>
+							<a href="https://github.com/sequelize" target="_BLANK" rel="noopener noreferrer">https://github.com/sequelize</a>
 						</p>
 					</Grid.Column>
 				</Grid.Row>

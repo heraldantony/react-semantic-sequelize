@@ -1,11 +1,10 @@
-'use strict';
+'use strict'
 module.exports = (sequelize, DataTypes) => {
-  var Region = sequelize.define('Region', {
+	var Region = sequelize.define('Region', {
 
-    regionName: DataTypes.STRING
+		regionName: DataTypes.STRING
 
-  });
+	})
 
-
-return Region;
+	return Region
 }

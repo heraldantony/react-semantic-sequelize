@@ -48,7 +48,7 @@ function mapStateToProps (state, props) {
 
 		if (isLoggedIn && path === authPath) {
 			return false
-		} else if (!isLoggedIn && !allowedToVisitPath.includes(path)) {
+		} else if (!isLoggedIn && !allowedToVisitPath.includes(path) && (tag instanceof RouteAuth)) {
 			return false
 		}
 		return true

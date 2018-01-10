@@ -10,13 +10,13 @@ import type {State as EntitiesLinksState} from 'reducers/links'
 import {layout} from './layout'
 import {links} from './links'
 import {auth} from './auth'
-import {tag} from './tag'
+import {task} from './task'
 
 // Root reducer
 export default combineReducers({
 	layout,
 	auth,
-	tag,
+	task,
 	entities: combineReducers({
 		links
 	}),

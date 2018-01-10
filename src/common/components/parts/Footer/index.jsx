@@ -16,9 +16,9 @@ const Footer = () => {
 								<Header as="h3" inverted>
 									<Icon name="github" />
 									<Header.Content>
-										Fresh Food Web
+										React, Semantic UI, Node, Sequelize Web App
 										<Header.Subheader>
-											Locate fresh groceries in your neigborhood.
+
 										</Header.Subheader>
 									</Header.Content>
 								</Header>

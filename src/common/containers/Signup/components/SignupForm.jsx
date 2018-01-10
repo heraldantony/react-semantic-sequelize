@@ -68,9 +68,9 @@ class SignupComponent extends Component<Props, State> {
 				component: InputField
 			},
 			{
-				placeholder: 'Email',
-				name: 'email',
-				label: 'Email',
+				placeholder: 'Name',
+				name: 'name',
+				label: 'Name',
 				required: true,
 				component: InputField
 			},

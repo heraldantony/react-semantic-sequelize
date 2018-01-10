@@ -1,45 +1,35 @@
-'use strict';
+'use strict'
 module.exports = (sequelize, DataTypes) => {
-  var Employee = sequelize.define('Employee', {
+	var Employee = sequelize.define('Employee', {
 
-    firstName: DataTypes.STRING,
+		firstName: DataTypes.STRING,
 
-    lastName: DataTypes.STRING,
+		lastName: DataTypes.STRING,
 
-    email: DataTypes.STRING,
+		email: DataTypes.STRING,
 
-    phoneNumber: DataTypes.STRING,
+		phoneNumber: DataTypes.STRING,
 
-    hireDate: DataTypes.DATE,
+		hireDate: DataTypes.DATE,
 
-    salary: DataTypes.INTEGER,
+		salary: DataTypes.INTEGER,
 
-    commissionPct: DataTypes.INTEGER
+		commissionPct: DataTypes.INTEGER
 
-  });
+	})
 
+	Employee.associate = (models) => {
+		models.Employee.belongsTo(models.Department, {
+			as: 'department'
+		})
 
-  Employee.associate = (models) => {
+		models.Employee.hasMany(models.Job, {
+			as: 'jobs'
+		})
 
-
-    models.Employee.belongsTo(models.Department, {
-      as: 'department'
-    });
-
-
-
-    models.Employee.hasMany(models.Job, {
-      as: 'jobs'
-    });
-
-
-
-    models.Employee.belongsTo(models.Employee, {
-      as: 'manager'
-    });
-
-
-
-  }
-  return Employee;
+		models.Employee.belongsTo(models.Employee, {
+			as: 'manager'
+		})
+	}
+	return Employee
 }

@@ -1,27 +1,19 @@
-'use strict';
+'use strict'
 module.exports = (sequelize, DataTypes) => {
-  var Department = sequelize.define('Department', {
+	var Department = sequelize.define('Department', {
 
-    departmentName: DataTypes.STRING
+		departmentName: DataTypes.STRING
 
-  });
+	})
 
+	Department.associate = (models) => {
+		models.Department.hasOne(models.Location, {
+			as: 'location'
+		})
 
-  Department.associate = (models) => {
-
-
-    models.Department.hasOne(models.Location, {
-      as: 'location'
-    });
-
-
-
-    models.Department.hasMany(models.Employee, {
-      as: 'employees'
-    });
-
-
-
-  }
-  return Department;
+		models.Department.hasMany(models.Employee, {
+			as: 'employees'
+		})
+	}
+	return Department
 }

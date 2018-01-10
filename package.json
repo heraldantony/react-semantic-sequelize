@@ -1,6 +1,6 @@
 {
   "name": "react-semantic-sequel",
-  "version": "2.2.0",
+  "version": "0.5.0",
   "main": "src/client/index.jsx",
   "description": "Advanced universal React starter built with a scale in mind.",
   "dependencies": {

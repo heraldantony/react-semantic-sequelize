@@ -4,6 +4,11 @@
   "main": "src/client/index.jsx",
   "description": "Advanced universal React starter built with a scale in mind.",
   "dependencies": {
+    "@commitlint/cli": "^5.2.0",
+    "@commitlint/config-conventional": "^5.1.3",
+    "assets-webpack-plugin": "^3.5.1",
+    "autodll-webpack-plugin": "^0.3.6",
+    "autoprefixer": "^7.1.6",
     "babel-polyfill": "^6.26.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",

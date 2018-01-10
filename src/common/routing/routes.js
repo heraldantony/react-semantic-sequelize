@@ -39,11 +39,18 @@ function asyncComponentCreator (url) {
 }
 
 function routingFnCreator (useFor: 'sidebar' | 'routing' | 'meta' | 'all' = 'all') {
-	const [AsyncDashboard, AsyncLogin, AsyncSignup, AsyncLinks, AsyncTaskSearch, AsyncTaskAdd, AsyncTaskEdit, AsyncNotFound] = [
+	const [AsyncDashboard, AsyncLogin, AsyncSignup,
+	  AsyncEmployeeSearch, AsyncEmployeeAdd, AsyncEmployeeEdit,
+	  AsyncDepartmentSearch, AsyncDepartmentAdd, AsyncDepartmentEdit,
+	  AsyncJobSearch, AsyncJobAdd, AsyncJobEdit,
+		AsyncTaskSearch, AsyncTaskAdd, AsyncTaskEdit,
+		AsyncNotFound] = [
 		'Dashboard',
 		'Login',
 		'Signup',
-		'Links',
+	  'employee/search', 'employee/add', 'employee/edit',
+	  'department/search', 'department/add', 'department/edit',
+	  'job/search', 'job/add', 'job/edit',
 		'task/search', 'task/add', 'task/edit',
 		'NotFound'
 	].map(a => asyncComponentCreator(a))
@@ -74,17 +81,6 @@ function routingFnCreator (useFor: 'sidebar' | 'routing' | 'meta' | 'all' = 'all
 			}
 		},
 		{
-			path: '/links',
-			exact: true,
-			tag: Route,
-			component: AsyncLinks,
-			meta: {
-				name: 'Links',
-				icon: 'bookmark',
-				sidebarVisible: true
-			}
-		},
-		{
 			path: '/auth',
 			exact: true,
 			tag: Route,
@@ -101,7 +97,107 @@ function routingFnCreator (useFor: 'sidebar' | 'routing' | 'meta' | 'all' = 'all
 			meta: {
 				name: 'Signup'
 			}
-		},
+		}, {
+			path: '/employee',
+	    exact: true,
+	    tag: RouteAuth,
+	    canAccess: isLoggedIn,
+	    component: AsyncEmployeeSearch,
+	    meta: {
+	      name: 'Employee',
+	      icon: 'bookmark',
+	      sidebarVisible: true
+	    }
+	  },
+	  {
+	    path: '/addEmployee',
+	    exact: true,
+	    tag: RouteAuth,
+	    canAccess: isLoggedIn,
+	    component: AsyncEmployeeAdd,
+	    meta: {
+	      name: 'Add Employee',
+	      sidebarVisible: false
+	    }
+	  },
+	  {
+	    path: '/editEmployee/:id',
+	    exact: true,
+	    tag: RouteAuth,
+	    canAccess: isLoggedIn,
+	    component: AsyncEmployeeEdit,
+	    meta: {
+	      name: 'Edit Employee',
+	      sidebarVisible: false
+	    }
+	  },
+		{
+	    path: '/department',
+	    exact: true,
+	    tag: RouteAuth,
+	    canAccess: isLoggedIn,
+	    component: AsyncDepartmentSearch,
+	    meta: {
+	      name: 'Department',
+	      icon: 'bookmark',
+	      sidebarVisible: true
+	    }
+	  },
+	  {
+	    path: '/addDepartment',
+	    exact: true,
+	    tag: RouteAuth,
+	    canAccess: isLoggedIn,
+	    component: AsyncDepartmentAdd,
+	    meta: {
+	      name: 'Add Department',
+	      sidebarVisible: false
+	    }
+	  },
+	  {
+	    path: '/editDepartment/:id',
+	    exact: true,
+	    tag: RouteAuth,
+	    canAccess: isLoggedIn,
+	    component: AsyncDepartmentEdit,
+	    meta: {
+	      name: 'Edit Department',
+	      sidebarVisible: false
+	    }
+	  }, {
+	    path: '/job',
+	    exact: true,
+	    tag: RouteAuth,
+	    canAccess: isLoggedIn,
+	    component: AsyncJobSearch,
+	    meta: {
+	      name: 'Job',
+	      icon: 'bookmark',
+	      sidebarVisible: true
+	    }
+	  },
+	  {
+	    path: '/addJob',
+	    exact: true,
+	    tag: RouteAuth,
+	    canAccess: isLoggedIn,
+	    component: AsyncJobAdd,
+	    meta: {
+	      name: 'Add Job',
+	      sidebarVisible: false
+	    }
+	  },
+	  {
+	    path: '/editJob/:id',
+	    exact: true,
+	    tag: RouteAuth,
+	    canAccess: isLoggedIn,
+	    component: AsyncJobEdit,
+	    meta: {
+	      name: 'Edit Job',
+	      sidebarVisible: false
+	    }
+	  },
 		{
 			path: '/task',
 			exact: true,

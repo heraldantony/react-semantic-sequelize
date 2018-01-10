@@ -10,12 +10,24 @@ import type {State as EntitiesLinksState} from 'reducers/links'
 import {layout} from './layout'
 import {links} from './links'
 import {auth} from './auth'
+import {region} from './region'
+import {country} from './country'
+import {location} from './location'
+import {employee} from './employee'
+import {department} from './department'
+import {job} from './job'
 import {task} from './task'
 
 // Root reducer
 export default combineReducers({
 	layout,
 	auth,
+	region,
+	country,
+	location,
+	employee,
+	department,
+	job,
 	task,
 	entities: combineReducers({
 		links

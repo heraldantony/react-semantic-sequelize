@@ -1,0 +1,17 @@
+{
+    "addons": [
+        {
+            "plan": "heroku-postgresql"
+        }
+    ],
+    "buildpacks": [],
+    "env": {
+        "NODE_ENV": {
+            "description": "Run as a development environment on Heroku",
+            "value": "development"
+        }
+    },
+    "formation": {},
+    "name": "react-semantic-sequelize",
+    "scripts": {}
+}
